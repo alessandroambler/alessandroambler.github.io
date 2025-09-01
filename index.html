@@ -92,6 +92,24 @@
       color: #fff;
       margin-top: 2rem;
     }
+    @media (max-width: 800px) {
+      img[alt^="Left Side"], img[alt^="Right Side"], img[alt^="Left Image"], img[alt^="Right Image"] {
+        display: none !important;
+      }
+      .project {
+        flex-direction: column !important;
+        align-items: flex-start;
+      }
+      .project img {
+        margin-top: 1rem;
+        margin-bottom: 0;
+        max-width: 100%;
+        height: auto;
+      }
+      .header-center {
+        padding-top: 2rem;
+      }
+    }
   </style>
 </head>
 <body>
