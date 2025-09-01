@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Name | Portfolio</title>
+  <title>Alessandro Ambler | Portfolio</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -14,10 +14,40 @@
       line-height: 1.6;
     }
     header {
-      background: #2c3e50;
+      padding: 0;
+      background: none;
+    }
+    .header-flex {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 350px;
+      background: #000;
+    }
+    .side-img {
+      width: 550px;
+      height: 350px;
+      object-fit: cover;
+      background-color: #000; /* Fill uncovered areas with black */
+      display: block;
+      opacity: 0.9;
+    }
+    .header-center {
+      background: #000;
       color: #fff;
-      padding: 2rem 1rem;
+      height: 350px; /* Match side image height */
+      min-width: 100px;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* Vertically center content */
+      align-items: center;     /* Horizontally center content */
+      padding: 0 1rem;         /* Remove vertical padding, keep horizontal */
       text-align: center;
+      flex: 1 1 0;
+    }
+    .profile-pic {
+      border: 3px solid #fff;
     }
     .profile-pic {
       width: 120px;
@@ -50,6 +80,9 @@
       padding-bottom: 0.5rem;
     }
     .project {
+      display: flex;
+      align-items: center; /* Vertically center image and text */
+      gap: 1.5rem;
       margin-bottom: 1.5rem;
     }
     footer {
@@ -63,73 +96,90 @@
 </head>
 <body>
   <header>
-    <img src="portrait.png" alt="Alessandro Ambler" class="profile-pic">
-    <h1>Alessandro Ambler</h1>
-    <p>Experimental Particle Physicist</p>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#resume">Resume</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <div class="header-flex">
+      <img src="enuggDisplay_Mod.png" alt="Left Image" class="side-img">
+      <div class="header-center">
+        <img src="portrait.png" alt="Alessandro Ambler" class="profile-pic">
+        <h1>Alessandro Ambler</h1>
+        <p style="font-size:1.2rem;">Physics | Data Science | Signal Processing</p>
+        <nav>
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#resume">Resume</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+      <img src="munuggDisplay_Mod.png" alt="Right Image" class="side-img">
+    </div>
   </header>
-
   <section id="about">
-    <h2>About Me</h2>
+    <h2>About</h2>
     <p>
       Hi! My name is <a href="https://www.physics.mcgill.ca/xhep/en/people/ambler.html" target="_blank">Alessandro Ambler</a>, and I completed my PhD in physics at McGill University under the supervision of Professor <a href="https://www.physics.mcgill.ca/xhep/en/people/vachon.html" target="_blank">Brigitte Vachon</a>.
-    </p>
-    <p>
-      I worked on the <a href="https://www.physics.mcgill.ca/xhep/en/research/atlas.html" target="_blank">ATLAS experiment</a> at CERN's Large Hadron Collider, winner of the <a href="https://reporter.mcgill.ca/mcgill-researchers-breakthrough-prize-in-fundamental-physics/" target="_blank">2025 Breakthrough Prize in Physics</a>. My research focused on high-energy physics data analysis searching for new interactions.
-      This work led to the <a href="https://doi.org/10.1016/j.physletb.2023.138400" target="_blank">first observation of the production of a W boson and two photons in proton-proton collisions</a>, published by ATLAS.
-      You can read more in the official ATLAS <a href="https://atlas.cern/Updates/Briefing/Tri-Boson-Production" target="_blank">blog post</a> that I co-wrote.
-    </p>
-    <p>
-      In addition, I contributed to the development and simulation of analog and digital signal processing algorithms for the <a href="https://cds.cern.ch/record/2285582" target="_blank">Phase-II upgrade of the ATLAS Liquid Argon Calorimeter</a>.
-      This included the exploration of machine learning in the form of convolutional neural networks for use in real-time energy reconstruction.
-    </p>
-    <p>
+      I worked on the <a href="https://www.physics.mcgill.ca/xhep/en/research/atlas.html" target="_blank">ATLAS experiment</a> at CERN's Large Hadron Collider, winner of the <a href="https://reporter.mcgill.ca/mcgill-researchers-breakthrough-prize-in-fundamental-physics/" target="_blank">2025 Breakthrough Prize in Physics</a>. 
       I graduated in 2024, and my thesis was awarded the <a href="http://www.physics.mcgill.ca/news/alessandroa0/" target="_blank">Yablonovitch Research Prize</a> for the best research accomplishment in experimental physics at McGill.
-    </p>
-    <p>
       I also volunteered as an instructor for the <a href="https://www.physics.mcgill.ca/masterclass/" target="_blank">McGill particle physics masterclass</a>.
-    </p>
-    <p>
       Here is a list of my <a href="https://inspirehep.net/authors/1607106" target="_blank">publications</a>.
     </p>
   </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="project">
-      <h3>Project Title 1</h3>
-      <p>Short description of what you built, technologies used, and why it’s valuable.</p>
-      <a href="https://github.com/yourusername/project1" target="_blank">View on GitHub</a>
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="project" style="display: flex; align-items: center; gap: 1.5rem;">
+    <div>
+      <h3>Data Analysis : First Observation of a Physics Process</h3>
+      <p>
+        My PhD research focused on high-energy physics data analysis searching for new interactions.
+        This work led to the <a href="https://doi.org/10.1016/j.physletb.2023.138400" target="_blank">first observation of the production of a W boson and two photons in proton-proton collisions</a>, published by ATLAS.
+        You can read more in the official ATLAS <a href="https://atlas.cern/Updates/Briefing/Tri-Boson-Production" target="_blank">blog post</a> that I co-wrote.
+      </p>
     </div>
-    <div class="project">
-      <h3>Project Title 2</h3>
-      <p>Another project description. Include links, images, or papers if relevant.</p>
-      <a href="https://github.com/yourusername/project2" target="_blank">View on GitHub</a>
+    <img src="WggResult.png" alt="Data Analysis Project" style="width:auto; height:200px; border-radius:8px; border:1px solid #ccc;">
+  </div>
+  <div class="project" style="display: flex; align-items: center; gap: 1.5rem;">
+    <img src="LAr_Pulse.png" alt="Signal Processing Project" style="width:auto; height:200px; border-radius:8px; border:1px solid #ccc;">
+    <div>
+      <h3>Signal Processing : Simulating and Optimizing Analog and Digital Signal Reconstruction</h3>
+      <p>
+        My MSc research focused on the development and simulation of analog and digital signal processing algorithms for energy reconstruction in the noisy environment of the ATLAS Liquid Argon Calorimeters.
+        This was part of the <a href="https://cds.cern.ch/record/2285582" target="_blank">Phase-II upgrade of the ATLAS Liquid Argon Calorimeter</a>.
+        In addition, during my PhD, I explored the use of machine learning (ML) in the form of convolutional neural networks (CNNs) for use in real-time energy reconstruction. These CNNs used dilated convolutional layers inspired by Google DeepMind's 
+        <a href="https://deepmind.google/discover/blog/wavenet-a-generative-model-for-raw-audio/" target="_blank">WaveNet</a> algorithm, which outperformed the current algorithms used in the ATLAS Calorimeter electronics.
+      </p>
     </div>
-  </section>
+  </div>
+</section>
 
   <section id="resume">
     <h2>Resume</h2>
-    <p>
-      Download my resume here: 
-      <a href="AlessandroAmblerCV.pdf" target="_blank">Resume (PDF)</a>
-    </p>
+    <ul>
+      <li>PhD and MSc in Physics at McGill working on the ATLAS experiment at the CERN's Large Hadron Collider.</li>
+      <li>8+ years of experience in international collaboration working on software development with large datasets.</li>
+      <li>Expert in C++ and Python, with strong skills in statistical modeling, machine learning, and algorithm design.</li>
+      <li>Contributed to the first observation of a rare particle process and advanced detector upgrades.</li>
+      <li>Strong intrests in data science, signal processing, and complex problem solving.</li>
+    </ul>
+    <a href="Resume.pdf" target="_blank">
+      <img 
+        src="Resume.png" 
+        alt="Resume preview" 
+        style="display:block;margin:0 auto;width:100%;max-width:200px;border:1px solid #ccc;">
+    </a>
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
-    <p>Email: <a href="mailto:your.email@example.com">alessandro.ambler@mail.mcgill.ca</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/yourusername" target="_blank">https://www.linkedin.com/in/alessandro-ambler-a7a73094/</a></p>
+    <p style="text-align: center;"><a href="https://www.linkedin.com/in/alessandro-ambler-a7a73094/" target="_blank">LinkedIn</a> || alessandro.ambler(at)mail.mcgill.ca</p>
     <!-- <p>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/alessandroambler</a></p> -->
   </section>
 
   <footer>
     <p>© 2025 Alessandro Ambler</p>
-  </footer>
+  </footer>  <img src="wggFeynman.png" alt="Left Side 1" style="position:fixed;left:0;top:0;height:40vh;z-index:-1;opacity:0.2;">
+  <img src="wggFeynman1.png" alt="Left Side 2" style="position:fixed;left:0;top:45vh;height:40vh;z-index:-1;opacity:0.2;">
+  <img src="wggFeynman.png" alt="Left Side 3" style="position:fixed;left:0;top:90vh;height:40vh;z-index:-1;opacity:0.2;">
+  <img src="wggFeynman2.png" alt="Right Side 1" style="position:fixed;right:0;top:0;height:40vh;z-index:-1;opacity:0.2;">
+  <img src="wggFeynman3.png" alt="Right Side 2" style="position:fixed;right:0;top:45vh;height:40vh;z-index:-1;opacity:0.2;">
+  <img src="wggFeynman.png" alt="Right Side 3" style="position:fixed;right:0;top:90vh;height:40vh;z-index:-1;opacity:0.2;">
 </body>
 </html>
